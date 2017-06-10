@@ -11,6 +11,11 @@ namespace ClassLibrary.Models
         public string ActivityName { get; set; }
         public EventType ActivityType { get; set; }
         public DateTime ActivityDate { get; set; }
-        public string Ac { get; set; }
+        public Saloon SaloonID { get; set; }
+        public int GuessLimit { get; set; }
+        public Speaker SpeakersID { get; set; }
+        public Worker WorkersID { get; set; }
+        public string ActivityPhoto { get; set; }
+        public Boolean IsDeleted { get; set; }
     }
 }

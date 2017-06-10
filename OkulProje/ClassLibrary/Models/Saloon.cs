@@ -21,32 +21,41 @@ namespace ClassLibrary
         {
             if (this.ID == 0)
             {
-                this.ID = DAL.insertSql("insert into Saloon(FacultyName) values (@FacultyName)", new MySqlParameter("@FacultyName", this.SaloonName));
+                this.ID = DAL.insertSql("insert into Saloon(SaloonName,SaloonQuata,SaloonAddress,SaloonLocation) values (@SaloonName,@SaloonQuata,@SaloonAddress,@SaloonLocation)", new List<MySqlParameter>()
+                    {
+                        new MySqlParameter("@SaloonName",this.SaloonName),
+                        new MySqlParameter("@SaloonQuata",this.SaloonQuata),
+                        new MySqlParameter("@SaloonAddress",this.SaloonAddress),
+                        new MySqlParameter("@SaloonLocation",this.SaloonLocation)
+                    });
             }
             else
             {
-                DAL.insertSql("update Faculty set FacultyName = @FacultyName where ID = @ID",
-                    new List<MySqlParameter>()
-                    {
-                        new MySqlParameter("@FacultyName",this.SaloonName),
+                DAL.insertSql("update Speakers set SaloonName = @SaloonName, SaloonQuata=@SaloonQuata, SaloonAddress=@SaloonAddress, SaloonLocation=@SaloonLocation where ID = @ID",
+                   new List<MySqlParameter>()
+                   {
+                       new MySqlParameter("@SaloonName",this.SaloonName),
+                        new MySqlParameter("@SaloonQuata",this.SaloonQuata),
+                        new MySqlParameter("@SaloonAddress",this.SaloonAddress),
+                        new MySqlParameter("@SaloonLocation",this.SaloonLocation),
                         new MySqlParameter("@ID",this.ID)
-                    }
-                    );
+                   }
+                   );
             }
             return this.ID;
         }
 
         public void Delete()
         {
-            DAL.insertSql("update Faculty set IsDeleted=1 Where ID=@ID", new MySqlParameter("@ID", this.ID));
+            DAL.insertSql("update Saloon set IsDeleted=1 Where ID=@ID", new MySqlParameter("@ID", this.ID));
         }
 
-        public List<Saloon> getFaculties(string filter)
+        public List<Saloon> getSaloons(string filter)
         {
 
             List<Saloon> result = new List<Saloon>();
 
-            DataTable data = DAL.readData("select * from Faculty where IsDeleted=0 and FacultyName Like @filter", new MySqlParameter("@filter", '%' + filter + '%'));
+            DataTable data = DAL.readData("select * from Saloon where IsDeleted=0 and SaloonName Like @filter", new MySqlParameter("@filter", '%' + filter + '%'));
 
 
 
@@ -57,7 +66,10 @@ namespace ClassLibrary
                     new Saloon
                     {
                         ID = Convert.ToInt32(dr["ID"]),
-                        SaloonName = dr["FacultyName"].ToString()
+                        SaloonName = dr["SaloonName"].ToString(),
+                        SaloonQuata = Convert.ToInt32(dr["SaloonQuata"]),
+                        SaloonAddress = dr["SaloonAddress"].ToString(),
+                        SaloonLocation = dr["SaloonLocation"].ToString()
                     }
                );
 
@@ -65,10 +77,13 @@ namespace ClassLibrary
             return result;
         }
 
-        public void getFaculty()
+        public void getSaloon()
         {
-            DataTable data = DAL.readData("select * from Faculty where ID=@ID", new MySqlParameter("@ID", this.ID));
-            this.SaloonName = data.Rows[0]["FacultyName"].ToString();
+            DataTable data = DAL.readData("select * from Saloon where ID=@ID", new MySqlParameter("@ID", this.ID));
+            this.SaloonName = data.Rows[0]["SaloonName"].ToString();
+            this.SaloonQuata = Convert.ToInt32(data.Rows[0]["SaloonQuata"].ToString());
+            this.SaloonAddress = data.Rows[0]["SaloonAddress"].ToString();
+            this.SaloonLocation = data.Rows[0]["SaloonLocation"].ToString();
             this.IsDeleted = Convert.ToBoolean(data.Rows[0]["IsDeleted"].ToString());
         }
 
