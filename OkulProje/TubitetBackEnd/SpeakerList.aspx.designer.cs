@@ -10,7 +10,7 @@
 namespace TubitetBackEnd {
     
     
-    public partial class SpeakerList {
+    public partial class EventList {
         
         /// <summary>
         /// form1 control.
@@ -31,13 +31,13 @@ namespace TubitetBackEnd {
         protected global::Ext.Net.GridPanel grdList;
         
         /// <summary>
-        /// btnNewSpeaker control.
+        /// btnNewEvent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Button btnNewSpeaker;
+        protected global::Ext.Net.Button btnNewEvent;
         
         /// <summary>
         /// txtFilter control.

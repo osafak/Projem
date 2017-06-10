@@ -1,4 +1,4 @@
-﻿using ClassLibrary.Infrastucture;
+﻿using ClassLibrary.Infrastructure;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
