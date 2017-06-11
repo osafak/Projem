@@ -31,6 +31,7 @@ namespace ClassLibrary.Infrastructure.Migrations
             .WithColumn("UserNo").AsInt32().NotNullable()
             .WithColumn("UserAddress").AsString(256).NotNullable()
             .WithColumn("UserState").AsByte().NotNullable().WithDefaultValue(0)
+            .WithColumn("ActivationCode").AsInt32().NotNullable()
             .WithColumn("FacultyID").AsInt32().ForeignKey("Faculty", "ID")
             .WithColumn("UserTitleID").AsInt32().NotNullable().ForeignKey("UserTitle", "ID")
             .WithColumn("IsDeleted").AsBoolean().WithDefaultValue(false);
@@ -51,7 +52,6 @@ namespace ClassLibrary.Infrastructure.Migrations
             .WithColumn("SaloonName").AsString(256).NotNullable()
             .WithColumn("SaloonQuota").AsByte().WithDefaultValue(0)
             .WithColumn("SaloonAddress").AsString(256).NotNullable()
-            .WithColumn("SaloonLocation").AsString(256).NotNullable()
             .WithColumn("IsDeleted").AsBoolean().WithDefaultValue(false);
 
             Create.Table("SaloonFeature")

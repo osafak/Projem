@@ -55,7 +55,7 @@ namespace TubitetBackEnd
 
             if (control > 0)
             {
-                X.Msg.Alert("Uyarı", "Fakülte kartı kayıt edilmiştir. Yeni bir kayıt daha yapabilirsiniz.").Show();
+                X.Msg.Alert("Uyarı", "İlgi alanı başarıyla kayıt edilmiştir. Yeni bir kayıt daha yapabilirsiniz.").Show();
                 ResetForm();
             }
             else

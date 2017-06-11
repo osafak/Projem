@@ -17,7 +17,7 @@ namespace ClassLibrary.Models
         {
             if (this.ID == 0)
             {
-                this.ID = DAL.insertSql("insert into ActivityType values (@TypeName)", new MySqlParameter("@TypeName", this.TypeName));
+                this.ID = DAL.insertSql("insert into ActivityType(TypeName) values (@TypeName)", new MySqlParameter("@TypeName", this.TypeName));
             }
             else
             {
@@ -48,7 +48,7 @@ namespace ClassLibrary.Models
             {
 
                 result.Add(
-                    new EventType
+                    new EventType()
                     {
                         ID = Convert.ToInt32(dr["ID"]),
                         TypeName = dr["TypeName"].ToString()
