@@ -14,30 +14,27 @@ namespace ClassLibrary
         public string SaloonName { get; set; }
         public int SaloonQuata { get; set; }
         public string SaloonAddress { get; set; }
-        public string SaloonLocation { get; set; }
         public Boolean IsDeleted { get; set; }
 
         public int save()
         {
             if (this.ID == 0)
             {
-                this.ID = DAL.insertSql("insert into Saloon(SaloonName,SaloonQuata,SaloonAddress,SaloonLocation) values (@SaloonName,@SaloonQuata,@SaloonAddress,@SaloonLocation)", new List<MySqlParameter>()
+                this.ID = DAL.insertSql("insert into Saloon(SaloonName,SaloonQuota,SaloonAddress) values (@SaloonName,@SaloonQuata,@SaloonAddress)", new List<MySqlParameter>()
                     {
                         new MySqlParameter("@SaloonName",this.SaloonName),
                         new MySqlParameter("@SaloonQuata",this.SaloonQuata),
                         new MySqlParameter("@SaloonAddress",this.SaloonAddress),
-                        new MySqlParameter("@SaloonLocation",this.SaloonLocation)
                     });
             }
             else
             {
-                DAL.insertSql("update Speakers set SaloonName = @SaloonName, SaloonQuata=@SaloonQuata, SaloonAddress=@SaloonAddress, SaloonLocation=@SaloonLocation where ID = @ID",
+                DAL.insertSql("update Speakers set SaloonName = @SaloonName, SaloonQuata=@SaloonQuota, SaloonAddress=@SaloonAddress where ID = @ID",
                    new List<MySqlParameter>()
                    {
                        new MySqlParameter("@SaloonName",this.SaloonName),
                         new MySqlParameter("@SaloonQuata",this.SaloonQuata),
                         new MySqlParameter("@SaloonAddress",this.SaloonAddress),
-                        new MySqlParameter("@SaloonLocation",this.SaloonLocation),
                         new MySqlParameter("@ID",this.ID)
                    }
                    );
@@ -67,9 +64,8 @@ namespace ClassLibrary
                     {
                         ID = Convert.ToInt32(dr["ID"]),
                         SaloonName = dr["SaloonName"].ToString(),
-                        SaloonQuata = Convert.ToInt32(dr["SaloonQuata"]),
+                        SaloonQuata = Convert.ToInt32(dr["SaloonQuota"]),
                         SaloonAddress = dr["SaloonAddress"].ToString(),
-                        SaloonLocation = dr["SaloonLocation"].ToString()
                     }
                );
 
@@ -81,9 +77,8 @@ namespace ClassLibrary
         {
             DataTable data = DAL.readData("select * from Saloon where ID=@ID", new MySqlParameter("@ID", this.ID));
             this.SaloonName = data.Rows[0]["SaloonName"].ToString();
-            this.SaloonQuata = Convert.ToInt32(data.Rows[0]["SaloonQuata"].ToString());
+            this.SaloonQuata = Convert.ToInt32(data.Rows[0]["SaloonQuota"].ToString());
             this.SaloonAddress = data.Rows[0]["SaloonAddress"].ToString();
-            this.SaloonLocation = data.Rows[0]["SaloonLocation"].ToString();
             this.IsDeleted = Convert.ToBoolean(data.Rows[0]["IsDeleted"].ToString());
         }
 

@@ -37,3 +37,4 @@ C:\Users\AKSEL\Desktop\Projem\OkulProje\ClassLibrary\bin\Debug\FluentMigrator.pd
 C:\Users\AKSEL\Desktop\Projem\OkulProje\ClassLibrary\bin\Debug\FluentMigrator.xml
 C:\Users\AKSEL\Desktop\Projem\OkulProje\ClassLibrary\obj\Debug\ClassLibrary.dll
 C:\Users\AKSEL\Desktop\Projem\OkulProje\ClassLibrary\obj\Debug\ClassLibrary.pdb
+C:\Users\AKSEL\Desktop\Projem\OkulProje\ClassLibrary\obj\Debug\ClassLibrary.csprojResolveAssemblyReference.cache

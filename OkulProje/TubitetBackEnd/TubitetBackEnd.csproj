@@ -119,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="EventList.aspx" />
+    <Content Include="EventTypeList.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="InterestList.aspx" />
     <Content Include="Login.aspx" />
@@ -127,12 +128,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="App_Readme\Ext.NET\Sample.Web.config" />
+    <Content Include="WorkerList.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="SaloonList.aspx" />
     <Content Include="SpeakerList.aspx" />
     <Content Include="SpeakerPhoto\1.png" />
     <Content Include="SpeakerPhoto\18766778_10211873444604055_531059856540350517_o.jpg" />
@@ -167,6 +170,13 @@
     <Compile Include="EventList.aspx.designer.cs">
       <DependentUpon>EventList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EventTypeList.aspx.cs">
+      <DependentUpon>EventTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventTypeList.aspx.designer.cs">
+      <DependentUpon>EventTypeList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FacultyList.aspx.cs">
       <DependentUpon>FacultyList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -199,6 +209,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaloonList.aspx.cs">
+      <DependentUpon>SaloonList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SaloonList.aspx.designer.cs">
+      <DependentUpon>SaloonList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SpeakerList.aspx.cs">
       <DependentUpon>SpeakerList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -212,6 +229,13 @@
     </Compile>
     <Compile Include="UserTitleList.aspx.designer.cs">
       <DependentUpon>UserTitleList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkerList.aspx.cs">
+      <DependentUpon>WorkerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkerList.aspx.designer.cs">
+      <DependentUpon>WorkerList.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

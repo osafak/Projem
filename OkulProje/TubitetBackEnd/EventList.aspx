@@ -51,11 +51,14 @@
             <ColumnModel>
                 <Columns>
                     <ext:RowNumbererColumn runat="server" Text="Sıra No" Width="80"></ext:RowNumbererColumn>
-                    <ext:Column runat="server" Text="Konuşmacı Adı" DataIndex="SpeakerName" Flex="1"></ext:Column>
-                    <ext:Column runat="server" Text="Konuşmacı Fotoğrafı" DataIndex="SpeakerPhoto" Flex="1"></ext:Column>
-                    <ext:Column runat="server" Text="Konuşmacı CV" DataIndex="SpeakerCV" Flex="1"></ext:Column>
-                    <ext:Column runat="server" Text="Konuşmacı Kurum" DataIndex="SpeakerWorksFor" Flex="1"></ext:Column>
-                    <ext:Column runat="server" Text="Uzmanlık Alanı" DataIndex="SpeakerSpeakAbout" Flex="1"></ext:Column>
+                    <ext:Column runat="server" Text="Etkinlik Adı" DataIndex="ActivityName" Flex="1"></ext:Column>
+                    <ext:Column runat="server" Text="Etkinlik Tipi" DataIndex="ActivityType" Flex="1"></ext:Column>
+                    <ext:Column runat="server" Text="Etkinlik Tarihi" DataIndex="ActivityDate" Flex="1"></ext:Column>
+                    <ext:Column runat="server" Text="Etkinlik Yeri" DataIndex="SaloonID" Flex="1"></ext:Column>
+                    <ext:Column runat="server" Text="Katılımcı Sayısı" DataIndex="GuessLimit" Flex="1"></ext:Column>
+                    <ext:Column runat="server" Text="Konuşmacı" DataIndex="GuessLimit" Flex="1"></ext:Column>
+                    <ext:Column runat="server" Text="Görevli" DataIndex="GuessLimit" Flex="1"></ext:Column>
+                    <ext:Column runat="server" Text="Afiş" DataIndex="GuessLimit" Flex="1"></ext:Column>
                     <ext:CommandColumn runat="server" Width="160" ID="grdCommands">
                         <Commands>
                             <ext:GridCommand Icon="ApplicationEdit" Text="Güncelle" CommandName="cmdUpdate"></ext:GridCommand>

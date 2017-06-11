@@ -10,7 +10,7 @@
 namespace TubitetBackEnd {
     
     
-    public partial class EventList {
+    public partial class SpeakerList {
         
         /// <summary>
         /// form1 control.
